@@ -73,6 +73,10 @@
         app:layout_constraintStart_toEndOf="@+id/box_two_text"
         app:layout_constraintTop_toBottomOf="@+id/box_four_text" />
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
@@ -126,7 +130,11 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_yellow"
         app:layout_constraintTop_toBottomOf="@+id/instructions"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="1.0" />
+=======
+        app:layout_constraintVertical_bias="0.5" />
+>>>>>>> origin/master
 
     <Button
         android:id="@+id/button_black"
@@ -138,4 +146,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_red" />
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 </androidx.constraintlayout.widget.ConstraintLayout>
