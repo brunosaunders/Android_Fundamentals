@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AboutMe</string>
+    <string name="name">Bruno Saunders</string>
+    <string name="star_description">Yellow Star</string>
+    <string name="done">Done</string>
+    <string name="what_is_your_nickname">What is your nickname?</string>
+    <string name="bio">Atualmente curso o 7° semestre da graduação em Engenharia Metalúrgica e de
+        Materiais na Universidade Federal do Ceará.
+\n
+        \n Nessa instituição já usufrui de diversas oportunidades, dentre elas: palestras,
+        minicursos, visitas técnicas, apresentações de trabalhos, vivência de um ambiente
+        empresarial já na universidade ao ter feito parte da Metal Soluções Jr por 8 meses,
+        assim como montar e liderar uma equipe para competir no SteelChallenge - 13.
+\n
+        \n Devido a tudo isso, tive também a fantástica experiência de poder representar o Brasil,
+        junto à minha equipe, em uma competição internacional de siderurgia, o SteelChallenge -13,
+        sediado em Madri na Espanha pela SteelUniversity.
+\n
+    \n Vamos a um exemplo para entender este problema:
+\n
+        \n Imagine um aplicativo de notícias, que tem como requisito rodar bem em Smartphones e
+        Tablets. Basicamente, o app conta com uma lista de nomes de notícias, que ao ser clicada
+        mostrará uma tela com a notícia completa. Em um smartphone a melhor maneira de atender esta
+        situação é ter uma Lista em uma tela, e depois dessa lista ser clicada o usuário seria
+        direcionado para a tela de detalhes. Já em um tablet, a melhor maneira seria exibir em
+        uma mesma tela, a lista e o</string>
+</resources>
