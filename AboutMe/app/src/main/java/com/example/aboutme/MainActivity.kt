@@ -5,33 +5,37 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.aboutme.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        done_button.setOnClickListener {addNickname(it)}
-        nickname_text.setOnClickListener {updateNickname(it)}
+        binding.doneButton.setOnClickListener {addNickname(it)}
+        binding.nicknameText.setOnClickListener {updateNickname(it)}
     }
 
     private fun addNickname(view: View){
-        val text = nickname_edit.text
-        nickname_text.text = text
+        val text = binding.nicknameEdit.text
+        binding.nicknameText.text = text
 
-        nickname_edit.visibility = View.GONE
-        done_button.visibility = View.GONE
-        nickname_text.visibility = View.VISIBLE
+        binding.nicknameEdit.visibility = View.GONE
+        binding.doneButton.visibility = View.GONE
+        binding.nicknameText.visibility = View.VISIBLE
 
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     private fun updateNickname(view: View){
-        nickname_text.visibility = View.GONE
-        nickname_edit.visibility = View.VISIBLE
-        done_button.visibility = View.VISIBLE
+        binding.nicknameText.visibility = View.GONE
+        binding.nicknameEdit.visibility = View.VISIBLE
+        binding.doneButton.visibility = View.VISIBLE
 
         nickname_edit.requestFocus()
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
