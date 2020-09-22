@@ -53,12 +53,19 @@ class GameFragment : Fragment() {
         Log.i("GameFragment", "called ViewModelProvider.get")
 
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
+
+        /** creating observers of LiveDatas on viewModel attributes**/
+
         viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
         })
 
         viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
             binding.wordText.text = newWord
+        })
+
+        viewModel.eventFinishGame.observe(viewLifecycleOwner, Observer {hasFinished ->
+            if (hasFinished) finishGame()
         })
 
         binding.correctButton.setOnClickListener { onCorrect() }
