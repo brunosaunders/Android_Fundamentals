@@ -51,7 +51,6 @@ class GameFragment : Fragment() {
         )
 
         Log.i("GameFragment", "called ViewModelProvider.get")
-
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
         /** DataBinding GameViewModel**/
@@ -65,16 +64,6 @@ class GameFragment : Fragment() {
             if (hasFinished) finishGame()
         })
         return binding.root
-    }
-
-    /** Methods for updating the UI **/
-
-    private fun updateWordText() {
-        binding.wordText.text = viewModel.word.value
-    }
-
-    private fun updateScoreText() {
-        binding.scoreText.text = viewModel.score.value.toString()
     }
 
     private fun finishGame() {
