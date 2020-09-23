@@ -69,6 +69,10 @@ class GameViewModel : ViewModel() {
         _eventFinishGame.value = true
     }
 
+    fun onFinishGameCompleted() {
+        _eventFinishGame.value = false
+    }
+
     fun onSkip() {
         _score.value = score.value?.minus(1)
         nextWord()
