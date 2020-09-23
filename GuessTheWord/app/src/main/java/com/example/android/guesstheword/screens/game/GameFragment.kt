@@ -57,16 +57,10 @@ class GameFragment : Fragment() {
         /** DataBinding GameViewModel**/
         binding.gameViewModel = viewModel
 
+        /** Setting this fragment as the lifecycleOwner of DataBinding**/
+        binding.lifecycleOwner = viewLifecycleOwner
+
         /** creating observers of LiveDatas on viewModel attributes**/
-
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
-
-        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
-            binding.wordText.text = newWord
-        })
-
         viewModel.eventFinishGame.observe(viewLifecycleOwner, Observer {hasFinished ->
             if (hasFinished) finishGame()
         })
