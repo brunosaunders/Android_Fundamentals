@@ -23,9 +23,6 @@ import android.text.Html
 import android.text.Spanned
 import androidx.core.text.HtmlCompat
 import com.example.android.trackmysleepquality.database.SleepNight
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 
 /**
@@ -105,12 +102,4 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
     } else {
         return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
-}
-fun main() {
-    GlobalScope.launch {
-        coroutineScope {
-
-        }
-    }
-
 }
