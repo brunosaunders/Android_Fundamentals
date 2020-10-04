@@ -17,11 +17,7 @@
 package com.example.android.trackmysleepquality.sleeptracker
 
 import android.app.Application
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import com.example.android.trackmysleepquality.database.SleepNight
 import com.example.android.trackmysleepquality.formatNights
@@ -91,12 +87,23 @@ class SleepTrackerViewModel(
      */
     private val _navigateToSleepQuality = MutableLiveData<SleepNight>()
 
+    private val _navigateToSleepDetail = MutableLiveData<Long?>()
+    val navigateToSleepDetail: LiveData<Long?>
+        get() = _navigateToSleepDetail
+
     /**
      * If this is non-null, immediately navigate to [SleepQualityFragment] and call [doneNavigating]
      */
     val navigateToSleepQuality: LiveData<SleepNight>
         get() = _navigateToSleepQuality
 
+    fun onSleepNightClicked(nightId: Long) {
+        _navigateToSleepDetail.value = nightId
+    }
+
+    fun onSleepDetailNavigated() {
+        _navigateToSleepDetail.value = null
+    }
     /**
      * Call this immediately after calling `show()` on a toast.
      *
