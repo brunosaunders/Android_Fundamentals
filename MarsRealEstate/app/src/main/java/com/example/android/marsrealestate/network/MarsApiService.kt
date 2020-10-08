@@ -30,7 +30,7 @@ private const val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com
  * full Kotlin compatibility.
  */
 private val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
+        .addLast(KotlinJsonAdapterFactory())
         .build()
 
 /**
