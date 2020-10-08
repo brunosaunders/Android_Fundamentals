@@ -45,7 +45,8 @@ class OverviewViewModel : ViewModel() {
     }
 
     /**
-     * Sets the value of the status LiveData to the Mars API status.
+     * Sets the value of the response LiveData to the Mars API status or the successful number of
+     * Mars properties retrieved.
      */
     private fun getMarsRealEstateProperties() {
         viewModelScope.launch {
